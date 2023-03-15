@@ -12,8 +12,31 @@ cd "${ASDF_DOWNLOAD_PATH}"
 
 case "$(uname -s)" in
   "Darwin")
-	  unzip -q soracom.zip
+    case "$(uname -m)" in
+      "arm64")
+			  unzip -q soracom.zip
+				mv ./soracom_${ASDF_INSTALL_VERSION}_darwin_arm64/soracom "${toolPath}"
+        ;;
+      "x86_64")
+			  unzip -q soracom.zip
+				mv ./soracom_${ASDF_INSTALL_VERSION}_darwin_amd64/soracom "${toolPath}"
+        ;;
+    esac
     ;;
+  "Linux")
+    case "$(uname -m)" in
+      "arm64")
+			  tar xzf soracom.tar.gz
+				mv ./soracom_${ASDF_INSTALL_VERSION}_linux_arm64/soracom "${toolPath}"
+        ;;
+      "x86_64")
+			  tar xzf soracom.tar.gz
+				mv ./soracom_${ASDF_INSTALL_VERSION}_linux_amd64/soracom "${toolPath}"
+        ;;
+    esac
+    ;;
+esac
+
   "Linux")
 	  tar xzf soracom.tar.gz
     ;;

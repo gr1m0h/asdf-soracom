@@ -7,5 +7,5 @@
 Install the plugin:
 
 ```
-asdf plugin add soracom https://github.com/grimoh117/asdf-soracom.git
+asdf plugin add soracom https://github.com/grimoh/asdf-soracom.git
 ```

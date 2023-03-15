@@ -37,10 +37,5 @@ case "$(uname -s)" in
     ;;
 esac
 
-  "Linux")
-	  tar xzf soracom.tar.gz
-    ;;
-esac
-
 mv ./soracom "${toolPath}"
 chmod +x "${toolPath}"

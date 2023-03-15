@@ -9,20 +9,20 @@ case "$(uname -s)" in
   "Darwin")
     case "$(uname -m)" in
       "arm64")
-        DOWNLOAD_URL="https://github.com/starship/starship/releases/download/v${ASDF_INSTALL_VERSION}/soracom_${ASDF_INSTALL_VERSION}_darwin_arm64.zip"
+        DOWNLOAD_URL="https://github.com/soracom/soracom-cli/releases/download/v${ASDF_INSTALL_VERSION}/soracom_${ASDF_INSTALL_VERSION}_darwin_arm64.zip"
         ;;
       "x86_64")
-        DOWNLOAD_URL="https://github.com/starship/starship/releases/download/v${ASDF_INSTALL_VERSION}/soracom_${ASDF_INSTALL_VERSION}_darwin_amd64.zip"
+        DOWNLOAD_URL="https://github.com/soracom/soracom-cli/releases/download/v${ASDF_INSTALL_VERSION}/soracom_${ASDF_INSTALL_VERSION}_darwin_amd64.zip"
         ;;
     esac
     ;;
   "Linux")
     case "$(uname -m)" in
       "arm64")
-        DOWNLOAD_URL="https://github.com/starship/starship/releases/download/v${ASDF_INSTALL_VERSION}/soracom_${ASDF_INSTALL_VERSION}_linux_arm64.tar.gz"
+        DOWNLOAD_URL="https://github.com/soracom/soracom-cli/releases/download/v${ASDF_INSTALL_VERSION}/soracom_${ASDF_INSTALL_VERSION}_linux_arm64.tar.gz"
         ;;
       "x86_64")
-        DOWNLOAD_URL="https://github.com/starship/starship/releases/download/v${ASDF_INSTALL_VERSION}/soracom_${ASDF_INSTALL_VERSION}_linux_amd64.tar.gz"
+        DOWNLOAD_URL="https://github.com/soracom/soracom-cli/releases/download/v${ASDF_INSTALL_VERSION}/soracom_${ASDF_INSTALL_VERSION}_linux_amd64.tar.gz"
         ;;
     esac
     ;;

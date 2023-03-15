@@ -37,5 +37,4 @@ case "$(uname -s)" in
     ;;
 esac
 
-mv ./soracom "${toolPath}"
 chmod +x "${toolPath}"

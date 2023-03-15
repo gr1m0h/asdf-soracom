@@ -9,6 +9,15 @@ mkdir -p "${ASDF_INSTALL_PATH}/bin"
 toolPath="${ASDF_INSTALL_PATH}/bin/soracom"
 
 cd "${ASDF_DOWNLOAD_PATH}"
-tar xzf soracom.tar.gz
+
+case "$(uname -s)" in
+  "Darwin")
+	  unzip -q soracom.zip
+    ;;
+  "Linux")
+	  tar xzf soracom.tar.gz
+    ;;
+esac
+
 mv ./soracom "${toolPath}"
 chmod +x "${toolPath}"

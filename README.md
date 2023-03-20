@@ -11,3 +11,21 @@ Install the plugin:
 ```
 asdf plugin add soracom
 ```
+
+Install soracom-cli:
+
+```
+asdf install soracom latest
+asdf global soracom latest
+soracom version
+#=> SORACOM API client v0.15.1
+```
+
+Update soracom-cli:
+
+```
+asdf plugin-update soracom
+## then, same as install operation.
+# asdf install soracom latest
+# asdf global soracom latest
+```

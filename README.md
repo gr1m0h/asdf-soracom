@@ -1,4 +1,4 @@
-![GitHub Actions Status](https://github.com/grimoh/asdf-soracom/workflows/Build/badge.svg?branch=main)
+[![Build](https://github.com/gr1m0h/asdf-soracom/actions/workflows/build.yaml/badge.svg)](https://github.com/gr1m0h/asdf-soracom/actions/workflows/build.yaml)
 
 # asdf-soracom
 

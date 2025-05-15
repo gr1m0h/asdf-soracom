@@ -25,7 +25,7 @@ case "$(uname -s)" in
     ;;
   "Linux")
     case "$(uname -m)" in
-      "arm64")
+      "arm64" | "aarch64")
 			  tar xzf soracom.tar.gz
 				mv ./soracom_${ASDF_INSTALL_VERSION}_linux_arm64/soracom "${toolPath}"
         ;;

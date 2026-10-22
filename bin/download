@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
+
+# Versions form part of an upstream URL; reject paths, queries and shell input.
+if [[ ! ${ASDF_INSTALL_VERSION:-} =~ ^[0-9]+\.[0-9]+\.[0-9]+([.-][0-9A-Za-z.-]+)?$ ]]; then
+	echo "Invalid ASDF_INSTALL_VERSION" >&2
+	exit 1
+fi
 
 # check ASDF environment variables
 [ -n "$ASDF_INSTALL_VERSION" ] || (echo 'Missing ASDF_INSTALL_VERSION' >&2 && exit 1)
@@ -10,11 +16,11 @@ case "$(uname -s)" in
 	case "$(uname -m)" in
 	"arm64")
 		DOWNLOAD_URL="https://github.com/soracom/soracom-cli/releases/download/v${ASDF_INSTALL_VERSION}/soracom_${ASDF_INSTALL_VERSION}_darwin_arm64.zip"
-		curl -fL -o "${ASDF_DOWNLOAD_PATH}/soracom.zip" "${DOWNLOAD_URL}"
+		curl --proto "=https" --proto-redir "=https" --tlsv1.2 -fL -o "${ASDF_DOWNLOAD_PATH}/soracom.zip" "${DOWNLOAD_URL}"
 		;;
 	"x86_64")
 		DOWNLOAD_URL="https://github.com/soracom/soracom-cli/releases/download/v${ASDF_INSTALL_VERSION}/soracom_${ASDF_INSTALL_VERSION}_darwin_amd64.zip"
-		curl -fL -o "${ASDF_DOWNLOAD_PATH}/soracom.zip" "${DOWNLOAD_URL}"
+		curl --proto "=https" --proto-redir "=https" --tlsv1.2 -fL -o "${ASDF_DOWNLOAD_PATH}/soracom.zip" "${DOWNLOAD_URL}"
 		;;
 	esac
 	;;
@@ -22,11 +28,11 @@ case "$(uname -s)" in
 	case "$(uname -m)" in
 	"arm64" | "aarch64")
 		DOWNLOAD_URL="https://github.com/soracom/soracom-cli/releases/download/v${ASDF_INSTALL_VERSION}/soracom_${ASDF_INSTALL_VERSION}_linux_arm64.tar.gz"
-		curl -fL -o "${ASDF_DOWNLOAD_PATH}/soracom.tar.gz" "${DOWNLOAD_URL}"
+		curl --proto "=https" --proto-redir "=https" --tlsv1.2 -fL -o "${ASDF_DOWNLOAD_PATH}/soracom.tar.gz" "${DOWNLOAD_URL}"
 		;;
 	"x86_64")
 		DOWNLOAD_URL="https://github.com/soracom/soracom-cli/releases/download/v${ASDF_INSTALL_VERSION}/soracom_${ASDF_INSTALL_VERSION}_linux_amd64.tar.gz"
-		curl -fL -o "${ASDF_DOWNLOAD_PATH}/soracom.tar.gz" "${DOWNLOAD_URL}"
+		curl --proto "=https" --proto-redir "=https" --tlsv1.2 -fL -o "${ASDF_DOWNLOAD_PATH}/soracom.tar.gz" "${DOWNLOAD_URL}"
 		;;
 	esac
 	;;
